@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    bottom: 0;
+}
+
+body
+{
+    background-color: #090909;
+    font-family: "Poppins", sans-serif;
+}
+.signin
+{
+  max-width: 400px;
+  height: 400px;
+  padding: 15px;
+  margin-left:35%;
+  margin-top: 15%;
+  border-radius: 5px;
+  background-color: #1f2327;
+  align-items: center;
+  flex-wrap: wrap;  
+  box-shadow:  5px 5px 10px rgba(0,0,0,0.2);
+
+}
+h2
+{
+    margin-left: 140px;
+}
+.email
+{
+    margin-top: 40px;
+    color: #fff;
+}
+.input-box input
+{
+    width: 300px;
+    margin-left: 15px;
+    height: 45px;
+    outline: none;
+    font-size: large;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+.input-box input:focus,
+.pass-box input:focus
+{
+border-color: aqua;
+}
+.password
+{
+    margin-top:20px;
+    color:white;
+}
+.pass-box input
+{
+    width: 300px;
+    margin-left: 15px;
+    height: 45px;
+    outline: none;
+    margin-top: 10px;
+    font-size: large;
+    padding-left: 5px;
+}
+.sign-button
+{
+    margin-top: 35px;
+    margin-left: 110px;
+    width:30%;
+    border-radius: 5px;
+    outline: none;
+    border-color:blue;
+    height: 10%;
+    color:#fff;
+    font-size: large;
+    background-color:midnightblue;
+}
+.sign-button:hover{
+    background-color: blue;
+}
+.dialogue 
+{
+text-decoration: none;
+margin-top: 15px;
+padding-left: 20px;
+color:white;
+}
+a{
+    text-decoration: none;
+}
+
+
+.box1 
+{
+    display: block;
+}
+
+
+/* Create Account */
+.create
+{
+    margin-left: 90px;
+    color:white;
+}
+.email2
+{
+    margin-top: 90px;
+    color:white;
+}
+.email-box input
+{
+    width: 300px;
+    margin-left: 15px;
+    height: 45px;
+    outline: none;
+    font-size: large;
+    padding-left: 5px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.email-box input:focus
+{
+border-color: aqua;
+}
+
+.create-button
+{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: 230px;
+    width:30%;
+    border-radius: 5px;
+    outline: none;
+    
+    height: 10%;
+    color:#fff;
+    font-size: large;
+    background-color:midnightblue;
+}
+.create-button:hover{
+    background-color: blue;
+}
+
+.box2
+{
+    display: none;
+}

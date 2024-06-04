@@ -1,0 +1,1018 @@
+{% load static %}
+<html>
+    <head>
+        <title>Weather Report</title>
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.png'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'data1.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'dark.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">    
+        <script  onload="remove()"src="{% static 'data.js'%}"defer></script>
+        <script src="{% static 'navbar.js'%}"defer></script>
+        <script src="{% static 'dark.js' %}"defer></script>
+        <script onload="findmystate()"src="{% static 'main.js'%}"defer></script>
+        <script src="{% static 'suggestions.js'%}"defer></script>
+        <script src="{% static 'script.js'%}"defer></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    </head>
+    <style>
+        .bar img
+        {
+            position: absolute;
+            margin-left:3%;
+            margin-top: 14px; 
+        } 
+       .move-bar
+       {
+         margin-left:17%;
+         width:105px;
+       }
+       .bar p
+       {
+        margin-top:0%;
+       }
+       .bar h2
+       {
+        margin-top:24px;
+       }
+       #menu
+       {
+        position: absolute;
+        margin-top: 0%;
+       }
+  </style>
+    <body>
+        <div class="bar">
+            <img src="{% static 'images/logo.png'%}"/>
+            <h2>Weather Report</h2>
+            <P class="status"></P>
+            <p class="degree">26<sup>o</sup>c</p>
+            <div class="wrapper">
+                <div class="search-input">
+                  <a href="" target="_blank" hidden></a>
+                  <input type="text" placeholder="Type to search..">
+                  <div class="autocom-box">
+                    <!-- here list are inserted from javascript -->
+                  </div>
+                  <div class="icon"><i class="fas fa-search"></i></div>
+                </div>
+              </div>
+            <p><i class="fa-solid fa-bars" id="menu"></i></p>
+          </div> 
+          <div class="submenu">
+              <div class="menu"> 
+
+              <a href="settings.html"><i class="fa-solid fa-gear" id="set-logo"></i></a>
+              <a href="settings.html"><h2>SETTINGS</h2></a>
+              <hr class="hro1" width="300px"/>
+              <a href="home.html"class="a1">TODAY</a>
+              <a href="hour.html"class="a2">HOUR</a>
+              <a href="daily.html"class="a3">DAILY</a>
+              <a href="monthly.html"class="a4">MONTHLY</a>
+              <a href="air.html"class="a5">AIR QUALITY</a>
+             </div>
+          </div>
+          <div class="navbar">
+            <ul>
+            <div class="move-bar"></div>  
+            <li class="l1"><a href="home.html" class="page1">Today</a></li>
+            <li class="l2"><a href="hour.html" class="page2">Hourly</a></li>
+            <li class="l3"><a href="daily.html" class="page3">Daily</a></li>
+            <li class="l4"><a href="monthly.html" class="page4">Monthly</a></li>
+            <li class="l5"><a href="air.html" class="page5">Air Quality</a></li>
+          </div> 
+        {% for i in obj %}  
+       <div id="touch" class="div1">   
+        <p class="time">1 PM</p>
+        <img src="{{i.img.url}}" id="img1"/>
+        <p id="degree">{{i.degree}}<sup>o</sup></p>
+        <p id="cotation">RealFeel&reg; 32<sup>o</sup></p>
+        <i class="fa-solid fa-droplet" id="id1"> 0%</i>
+        <i class="fa-solid fa-caret-down" id="id2"></i>
+        <div class="data" id="div2">
+            <table class="tab">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>    
+            </table> 
+        </div> 
+       </div>
+       {% endfor %}
+       {% for i in obj2 %}  
+       <!--2 pm-->
+        <div id="touch2" class="divinfo2">   
+            <p class="time2">2 PM</p>
+            <img src="{{i.img.url}}" id="img2"/>
+            <p id="degree2">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation2">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre2"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down2"></i>
+            <div class="data2" id="divtable2">
+              <table class="tab2">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>   
+            </table> 
+        </div>
+        </div>
+        {% endfor %}
+        {% for i in obj3 %} 
+        <!--3pm-->
+        <div id="touch3" class="divinfo3">   
+            <p class="time3">3 PM</p>
+            <img src="{{i.img.url}}" id="img3"/>
+            <p id="degree3">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation3">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre3"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down3"></i>
+            <div class="data3" id="divtable3">
+              <table class="tab3">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>      
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj4 %} 
+        <!--4 pm-->
+        <div id="touch4" class="divinfo4">   
+            <p class="time4">4 PM</p>
+            <img src="{{i.img.url}}" id="img4"/>
+            <p id="degree4">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation4">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre4"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down4"></i>
+            <div class="data4" id="divtable4">
+              <table class="tab4">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>     
+            </table> 
+        </div>
+        </div>         
+        {% endfor %}
+        {% for i in obj5 %}
+        <!--5pm-->
+        <div id="touch5" class="divinfo5">   
+            <p class="time5">5 PM</p>
+            <img src="{{i.img.url}}" id="img5"/>
+            <p id="degree5">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation5">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre5"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down5"></i>
+            <div class="data5" id="divtable5">
+              <table class="tab5">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>     
+            </table> 
+        </div>
+        </div>  
+        {% endfor %}
+        {% for i in obj6 %}
+        <div id="touch6" class="divinfo6">   
+            <p class="time6">6 PM</p>
+            <img src="{{i.img.url}}" id="img4"/>
+            <p id="degree6">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation6">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre6"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down6"></i>
+            <div class="data6" id="divtable6">
+              <table class="tab6">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>     
+            </table> 
+        </div>
+        </div>   
+        {% endfor %}
+        {% for i in obj7 %}     
+        <!--7 Am-->
+        <div id="touch7" class="divinfo7">   
+            <p class="time7">7 PM</p>
+            <img src="{{i.img.url}}" id="img7"/>
+            <p id="degree7">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation7">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre7"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down7"></i>
+            <div class="data7" id="divtable7">
+              <table class="tab7">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>   
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj8 %}
+        <!--8 AM-->
+        <div id="touch8" class="divinfo8">   
+            <p class="time8">8 PM</p>
+            <img src="{{i.img.url}}" id="img8"/>
+            <p id="degree8">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation8">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre8"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down8"></i>
+            <div class="data8" id="divtable8">
+              <table class="tab8">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>  
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj9 %}
+        <!--9 AM--> 
+        <div id="touch9" class="divinfo9">   
+            <p class="time9">9 PM</p>
+            <img src="{{i.img.url}}" id="img9"/>
+            <p id="degree9">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation9">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre9"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down9"></i>
+            <div class="data9" id="divtable9">
+              <table class="tab9">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>  
+            </table> 
+        </div>
+        </div>
+        {% endfor %}
+        {% for i in obj10 %} 
+        <!--10 AM-->
+        <div id="touch10" class="divinfo10">   
+            <p class="time10">10 PM</p>
+            <img src="{{i.img.url}}" id="img10"/>
+            <p id="degree10">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation10">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre10"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down10"></i>
+            <div class="data10" id="divtable10">
+              <table class="tab10">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>  
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj11%}
+        <!--11 AM--> 
+        <div id="touch11" class="divinfo11">   
+            <p class="time11">11 PM</p>
+            <img src="{{i.img.url}}" id="img11"/>
+            <p id="degree11">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation11">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre11"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down11"></i>
+            <div class="data11" id="divtable11">
+              <table class="tab11">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj12 %}
+        <!--12-->
+        <div id="touch12" class="divinfo12">   
+            <p class="time12">12 AM</p>
+            <img src="{{i.img.url}}" id="img12"/>
+            <p id="degree12">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation12">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre12"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down12"></i>
+            <div class="data12" id="divtable12">
+              <table class="tab12">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW {{i.wind}} km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">{{i.dewpoint}}<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">{{i.visibility}} km</td>
+                </tr>  
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj13 %}
+        <!--13-->
+        <div id="touch13" class="divinfo13">   
+            <p class="time13">1 AM</p>
+            <img src="{{i.img.url}}" id="img13"/>
+            <p id="degree13">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation13">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre13"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down13"></i>
+            <div class="data13" id="divtable13">
+              <table class="tab13">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj14 %}
+        <!--14-->
+        <div id="touch14" class="divinfo14">   
+            <p class="time14">2 AM</p>
+            <img src="{{i.img.url}}" id="img14"/>
+            <p id="degree14">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation14">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre14"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down14"></i>
+            <div class="data14" id="divtable14">
+              <table class="tab14">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj15 %}
+        <!--15-->
+        <div id="touch15" class="divinfo15">   
+            <p class="time15">3 AM</p>
+            <img src="{{i.img.url}}" id="img15"/>
+            <p id="degree15">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation15">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre15"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down15"></i>
+            <div class="data15" id="divtable15">
+              <table class="tab15">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div>
+        {% endfor %}
+        {% for i in obj16 %} 
+        <!--16-->
+        <div id="touch16" class="divinfo16">   
+            <p class="time16">4 AM</p>
+            <img src="{{i.img.url}}" id="img16"/>
+            <p id="degree16">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation16">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre16"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down16"></i>
+            <div class="data16" id="divtable16">
+              <table class="tab16">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div>
+        {% endfor %}
+        {% for i in obj17 %} 
+        <!--17-->
+        <div id="touch17" class="divinfo17">   
+            <p class="time17">5 AM</p>
+            <img src="{{i.img.url}}" id="img17"/>
+            <p id="degree17">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation17">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre17"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down17"></i>
+            <div class="data17" id="divtable17">
+              <table class="tab17">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj18 %}
+        <!--18-->
+        <div id="touch18" class="divinfo18">   
+            <p class="time18">6 AM</p>
+            <img src="{{i.img.url}}" id="img18"/>
+            <p id="degree18">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation18">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre18"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down18"></i>
+            <div class="data18" id="divtable18">
+              <table class="tab18">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj19 %}
+        <!--19-->
+        <div id="touch19" class="divinfo19">   
+            <p class="time19">7 AM</p>
+            <img src="{{i.img.url}}" id="img19"/>
+            <p id="degree19">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation19">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre19"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down19"></i>
+            <div class="data19" id="divtable19">
+              <table class="tab19">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div>
+        {% endfor %}
+        {% for i in obj20 %} 
+        <!--20-->
+        <div id="touch20" class="divinfo20">   
+            <p class="time20">8 AM</p>
+            <img src="{{i.img.url}}" id="img20"/>
+            <p id="degree20">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation20">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre20"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down20"></i>
+            <div class="data20" id="divtable20">
+              <table class="tab20">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj21 %}
+        <!--21-->
+        <div id="touch21" class="divinfo21">   
+            <p class="time21">9 AM</p>
+            <img src="{{i.img.url}}" id="img21"/>
+            <p id="degree21">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation21">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre21"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down21"></i>
+            <div class="data21" id="divtable21">
+              <table class="tab21">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj22 %}
+        <!--22-->
+        <div id="touch22" class="divinfo22">   
+            <p class="time22">10 AM</p>
+            <img src="{{i.img.url}}" id="img22"/>
+            <p id="degree22">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation22">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre22"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down22"></i>
+            <div class="data22" id="divtable22">
+              <table class="tab22">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj23 %}
+        <!--23-->
+        <div id="touch23" class="divinfo23">   
+            <p class="time23">11 AM</p>
+            <img src="{{i.img.url}}" id="img23"/>
+            <p id="degree23">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation23">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre23"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down23"></i>
+            <div class="data23" id="divtable23">
+              <table class="tab23">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}
+        {% for i in obj24 %}
+        <!--24-->
+        <div id="touch24" class="divinfo24">   
+            <p class="time24">12 AM</p>
+            <img src="{{i.img.url}}" id="img24"/>
+            <p id="degree24">{{i.degree}}<sup>o</sup></p>
+            <p id="cotation24">RealFeel&reg; 32<sup>o</sup></p>
+            <i class="fa-solid fa-droplet" id="pre24"> 0%</i>
+            <i class="fa-solid fa-caret-down" id="down24"></i>
+            <div class="data24" id="divtable24">
+              <table class="tab24">
+                <tr>
+                    <td align="left" style="width:120px;">Max UV Index</td>
+                    <td style="width:120px;">2 Low</td>
+                    <td align="left" style="width:120px;">Air Quality</td>
+                    <td style="color:purple;width:120px;">Very Unhealthy</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Wind</td>
+                    <td style="width:120px;">NW 15 km/h</td>
+                    <td align="left" style="width:120px;">Dew Point</td>
+                    <td style="width:120px;">21<sup>o</sup>C</td>
+                </tr>                        
+                <tr>
+                    <td align="left" style="width:120px;">Wind Gusts</td>
+                    <td style="width:120px;">22 km/h</td>
+                    <td align="left" style="width:120px;">Cloud Cover</td>
+                    <td style="width:120px;">31%</td>
+                </tr>    
+                <tr>
+                    <td align="left" style="width:120px;">Humidity</td>
+                    <td style="width:120px;">55%</td>
+                    <td align="left" style="width:120px;">Visibility</td>
+                    <td style="width:120px;">8 km</td>
+                </tr>    
+            </table> 
+        </div>
+        </div> 
+        {% endfor %}   
+  </body>
+</html>  

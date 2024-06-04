@@ -1,0 +1,90 @@
+h1{
+	float:left;
+	margin-top:10px;
+}
+.box{
+
+	width: 500px;
+
+	height: 50px;
+
+	background-color: white;
+
+	border-radius: 5px;
+
+	display: flex;
+
+	align-items: center;
+    margin-top: 10px;
+	padding: 20px;
+    margin-left:67%;
+    margin-bottom:15px;
+    box-shadow:  5px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+.box > i {
+
+	font-size: 20px;
+
+	color: #777;
+
+}
+
+
+.box > input{
+
+	flex: 1;
+
+	height: 40px;
+
+	border: none;
+
+	outline: none;
+
+	font-size: 18px;
+
+	padding-left: 30px;
+
+
+}
+.location
+{
+	position: absolute;
+	left: 30%;
+	background-color: black;
+	height:50px;
+	width:500px;
+	top:1%;
+}
+.status
+{
+	position: absolute;
+	top:3%;
+	left:30%;
+}
+#logo
+{
+top:3%;
+left:28%;
+position: absolute;
+}
+.degree
+{
+	position: absolute;
+	left:44%;
+	top:3%;
+	visibility: hidden;
+	transition: visibility 0.7s;
+	color:black;
+}
+.image
+{
+	position: absolute;
+	left:47%;
+	top:30px;
+	color:black;
+	visibility: hidden;
+	transition: visibility 0.7s;
+	
+}

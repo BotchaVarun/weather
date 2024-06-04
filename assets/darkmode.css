@@ -1,0 +1,20 @@
+body
+{
+        height: 100vh;
+      
+        align-items: center;
+      
+        background: #6047DF;
+}
+#mode
+{
+    font-size: 20px;
+    position:relative;
+    left:57%;
+
+    transform: translate(-5%, -5%);
+}
+
+ 
+
+

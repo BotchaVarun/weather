@@ -1,0 +1,163 @@
+{% load static %}
+<html>
+    <head>
+          <title>Weather Report</title>  
+          <link rel="icon" type="image/png" href="{% static 'images/favicon.png'%}">    
+          <link rel="stylesheet" type="text/css" href="{% static 'airquality.css'%}">
+          <link rel="stylesheet" type="text/css" href="{% static 'dark.css'%}">
+          <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+          <script src="{% static 'air.js'%}"defer></Script> 
+          <script src="{% static 'navbar.js'%}"defer></script>
+          <script onload="findmystate()"src="{% static 'main.js'%}"defer></script>
+          <script src="{% static 'suggestions.js'%}"defer></script>
+          <script src="{% static 'script.js'%}"defer></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    </head>
+    <style>
+      .move-bar
+      {
+        margin-left:79%;
+        width:95px;
+      }
+    </style>
+    <body>
+      <div class="bar">
+        <img src="{% static 'images/logo.png'%}"/>
+        <h2>Weather Report</h2>
+        <P class="status"></P>
+        <p class="degree">26<sup>o</sup>c</p>
+        <div class="wrapper">
+          <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input type="text" placeholder="Type to search..">
+            <div class="autocom-box">
+              <!-- here list are inserted from javascript -->
+            </div>
+            <div class="icon"><i class="fas fa-search"></i></div>
+          </div>
+        </div>
+        <p><i class="fa-solid fa-bars" id="menu"></i></p>
+      </div> 
+      <div class="submenu">
+          <div class="menu"> 
+
+          <a href="settings.html"><i class="fa-solid fa-gear" id="set-logo"></i></a>
+          <a href="settings.html"><h2>SETTINGS</h2></a>
+          <hr class="hro1" width="300px"/>
+          <a href="home.html"class="a1">TODAY</a>
+          <a href="hour.html"class="a2">HOUR</a>
+          <a href="daily.html"class="a3">DAILY</a>
+          <a href="monthly.html"class="a4">MONTHLY</a>
+          <a href="air.html"class="a5">AIR QUALITY</a>
+         </div>
+      </div>
+      <div class="navbar">
+        <ul>
+        <div class="move-bar"></div>  
+        <li class="l1"><a href="home.html" class="page1">Today</a></li>
+        <li class="l2"><a href="hour.html" class="page2">Hourly</a></li>
+        <li class="l3"><a href="daily.html" class="page3">Daily</a></li>
+        <li class="l4"><a href="monthly.html" class="page4">Monthly</a></li>
+        <li class="l5"><a href="air.html" class="page5">Air Quality</a></li>
+      </div>
+      <div id="qualityindex">
+        <p id="heading">CURRENT AIR QUALITY INDEX</p>
+        <hr class="line"/>
+        <p id="aqp1">Today</p>
+        <p id="aqp2"></p>   
+        <div class="container1">
+          <div class="circular-progress1">
+              <span class="progress-value1">120</span>
+          </div>
+        </div>  
+        <div id="aqline"></div>
+        <p id="aqp3">Very Unhealthy</p>
+        <p id="aqp4">Health effects will be immediately felt by sensitive groups and should avoid outdoor activity. Healthy individuals are likely to experience difficulty breathing and throat irritation; consider staying indoors and rescheduling outdoor activities.</p>
+      </div>
+      <div id="aqinfo">
+       <a id="aqhead1">Current Pollutants</a>
+       <div id="cursor"></div>
+       <a id="aqhead2">Air Quality Scale</a>
+       <hr class="break"/>
+       <div id="currentpollutant">
+        <p id="matter1">PM<sub>10</sub></p>
+        <div id="bar1"></div>
+        <p id="state1">Very Unhealthy</p>
+        <p id="dat1"><b><a href="https://air.plumelabs.com/learn/en/particulate-matter" target="_blank">Particulate Matter</a></b> inhalable pollutant particles with a diameter less than 10 micrometers. Particles that are larger than 2.5 micrometers can be deposited in airways, resulting in health issues. Exposure can result in eye and throat irritation, coughing or difficulty breathing, and aggravated asthma. More frequent and excessive exposure can result in more serious health effects.</p>
+        <p id="rate1">189</p>
+        <p id="form1">222 µg/m³</p>
+        <hr class="linebreak1"/>
+        <p id="matter2">PM<sub>2.5</sub></p>
+        <div id="bar2"></div>
+        <p id="state2">Very Unhealthy</p>
+        <p id="dat2"> <b><a href="https://air.plumelabs.com/learn/en/particulate-matter" target="_blank">Fine Particulate Matter</a></b> are inhalable pollutant particles with a diameter less than 2.5 micrometers that can enter the lungs and bloodstream, resulting in serious health issues. The most severe impacts are on the lungs and heart. Exposure can result in coughing or difficulty breathing, aggravated asthma, and the development of chronic respiratory disease.</p>
+        <p id="rate2">176</p>
+        <p id="form2">126 µg/m³</p>
+        <hr class="linebreak2"/>
+        <p id="matter3">NO<sub>2</sub></p>
+        <div id="bar3"></div>
+        <p id="state3">Fair</p>
+        <p id="dat3"> These  Breathing in high levels of  <b><a href="https://air.plumelabs.com/learn/en/no2"target="_blank">Nitrogen Dioxide </a></b> increases the risk of respiratory problems. Coughing and difficulty breathing are common and more serious health issues such as respiratory infections can occur with longer exposure.</p>
+        <p id="rate3">40</p>
+        <p id="form3">66 µg/m³</p>
+        <hr class="linebreak3"/>
+        <p id="matter4">SO<sub>2</sub></p>
+        <div id="bar4"></div>
+        <p id="state4">Fair</p>
+        <p id="dat4"> Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchiti.</p>
+        <p id="rate4">32</p>
+        <p id="form4">60 µg/m³</p>
+        <hr class="linebreak4"/>
+        <p id="matter5">O<sub>3</sub></p>
+        <div id="bar5"></div>
+        <p id="state5">Excellent</p>
+        <p id="dat5"> Ground-level <b><a href="https://air.plumelabs.com/learn/en/ozone" target="_blank">Ozone</a></b> can aggravate existing respiratory diseases and also lead to throat irritation, headaches, and chest pain.</p>
+        <p id="rate5">9</p>
+        <p id="form5">23 µg/m³</p>
+        <hr class="linebreak5"/>
+        <p id="matter6">CO</p>
+        <div id="bar6"></div>
+        <p id="state6">Excellent</p>
+        <p id="dat6"> Carbon Monoxide is a colorless and odorless gas and when inhaled at high levels can cause headache, nausea, dizziness, and vomiting. Repeated long-term exposure can lead to heart disease</p>
+        <p id="rate6">4</p>
+        <p id="form6">754 µg/m³</p>
+        <hr class="linebreak6"/>
+
+      </div>
+      <div id="aqscale">
+        <div id="aqbar1"></div>
+        <p id="aqstate1"><b>Excellent</b></p>
+        <p id="aqcontent1">The air quality is ideal for most individuals; enjoy your normal outdoor activities.</p>
+        <p id="range1">0 - 19</p>
+        <hr class="aqbreak1"/>
+        <div id="aqbar2"></div>
+        <p id="aqstate2"><b>Fair</b></p>
+        <p id="aqcontent2">The air quality is generally acceptable for most individuals. However, sensitive groups may experience minor to moderate symptoms from long-term exposure</p>
+        <p id="range2">20 - 49</p>
+        <hr class="aqbreak2"/>
+        <div id="aqbar3"></div>
+        <p id="aqstate3"><b>Poor</b></p>
+        <p id="aqcontent3">The air has reached a high level of pollution and is unhealthy for sensitive groups. Reduce time spent outside if you are feeling symptoms such as difficulty breathing or throat irritation.</p>
+        <p id="range3">50 - 99</p>
+        <hr class="aqbreak3"/>
+        <div id="aqbar4"></div>
+        <p id="aqstate4"><b>Unhealthy</b></p>
+        <p id="aqcontent4">Health effects can be immediately felt by sensitive groups. Healthy individuals may experience difficulty breathing and throat irritation with prolonged exposure. Limit outdoor activity.</p>
+        <p id="range4">100 - 149</p>
+        <hr class="aqbreak4"/>
+        <div id="aqbar5"></div>
+        <p id="aqstate5"><b>Very Unhealthy</b></p>
+        <p id="aqcontent5">Health effects will be immediately felt by sensitive groups and should avoid outdoor activity. Healthy individuals are likely to experience difficulty breathing and throat irritation; consider staying indoors and rescheduling outdoor activities.</p>
+        <p id="range5">150 - 249</p>
+        <hr class="aqbreak5"/>
+        <div id="aqbar6"></div>
+        <p id="aqstate6"><b>Dangerous</b></p>
+        <p id="aqcontent6">Any exposure to the air, even for a few minutes, can lead to serious health effects on everybody. Avoid outdoor activities.</p>
+        <p id="range6">250+</p>
+
+
+      </div>
+    </div>  
+  </body>  
+        
+</html>  

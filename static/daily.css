@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+.day1
+{
+    max-width:45%;
+    min-height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+
+}
+.day1 p
+{
+    position: absolute;
+}
+#day1
+{
+    margin-left:10px;
+    margin-top:10px;
+}
+#day2
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day3
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day4
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day5
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day6
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day7
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day8
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day9
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day10
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day11
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day12
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day13
+{
+    margin-left:10px;
+    margin-top:10px;
+}#day14
+{
+    margin-left:10px;
+    margin-top:10px;
+}
+#dat1
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat2
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat3
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat4
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat5
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat6
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat7
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat8
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat9
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+#dat10
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}#dat11
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}#dat12
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}#dat13
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}#dat14
+{
+    margin-top:5%;
+    color: #878787;
+    margin-left: 10px;
+}
+.day1 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+#high
+{
+    font-size:50px;
+    font-weight: 100;
+    margin-top:3%;
+    line-height: 50px;
+    margin-left: 30%;
+}
+#low
+{
+   font-size:19px;
+   color:#878787;
+   margin-top:4%;
+   line-height: 65px;
+   margin-left:42%; 
+}
+#cotation
+{
+    margin-top: 5%;
+    font-size: 20px;
+    margin-left:50%;
+}
+.day1 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+/*day2*/
+.day2
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+}
+.day2 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+.day2 p
+{
+    position: absolute;
+}
+.day2 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+/* day 3 */
+.day3
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+}
+.day3 p
+{
+    position: absolute;
+}
+.day3 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day3 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+
+/* day 3 */
+.day4
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+}
+.day4 p
+{
+    position: absolute;
+}
+.day4 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day4 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+
+/* day 3 */
+.day5
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+}
+.day5 p
+{
+    position: absolute;
+}
+.day5 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day5 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+
+/* day 6 */
+.day6
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+}
+.day6 p
+{
+    position: absolute;
+}
+.day6 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day6 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+
+/* day 7 */
+.day7
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+}
+.day7 p
+{
+    position: absolute;
+}
+.day7 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day7 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+
+/* day 8 */
+.day8
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+}
+.day8 p
+{
+    position: absolute;
+}
+.day8 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day8 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+/* day 3 */
+.day9
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+    display: none;
+}
+.day9 p
+{
+    position: absolute;
+}
+.day9 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day9 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+/* day 10 */
+.day10
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+    display: none;
+}
+.day10 p
+{
+    position: absolute;
+}
+.day10 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day10 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+/* day 11 */
+.day11
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+    display: none;
+}
+.day11 p
+{
+    position: absolute;
+}
+.day11 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day11 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+/* day 12 */
+.day12
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+    display: none;
+}
+.day12 p
+{
+    position: absolute;
+}
+.day12 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day12 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+/* day 13 */
+.day13
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+    display: none;
+}
+.day13 p
+{
+    position: absolute;
+}
+.day13 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day13 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}
+/* day 14 */
+.day14
+{
+    max-width:45%;
+    height:12%;
+    margin-top:2%;
+    margin-left: 27%;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.17);;
+    background-color:white;
+    position: relative;
+    display: none;
+}
+.day14 p
+{
+    position: absolute;
+}
+.day14 img
+{
+ width:80px;
+ margin-top:2%;
+ position: absolute;
+}
+.day14 i
+{
+    color:#878787;
+    float:right;
+    margin-right:2%;
+    margin-top:6%;
+}

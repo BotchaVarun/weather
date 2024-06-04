@@ -1,0 +1,221 @@
+{% load static %}
+<html>
+    <head>
+        <title>Weather Report</title>
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'dark.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'daily.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <script src="{% static 'navbar.js' %}"defer></script>
+        <script src="{% static 'suggestions.js' %}"defer></script>
+        <script src="{% static 'script.js' %}"defer></script>
+        <script onload="findmystate()" src="{% static 'main.js' %}"defer></script>
+        <script onload="removediv()" src="{% static 'daily.js'%}"defer></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    </head>
+    <style>
+    .move-bar
+    {
+      margin-left:38%;
+      width:85px;
+    }
+  </style>
+    <body>
+      <div class="bar">
+        <img src="{% static 'images/logo.png'%}"/>
+        <h2>Weather Report</h2>
+        <P class="status"></P>
+        <p class="degree">26<sup>o</sup>c</p>
+        <div class="wrapper">
+          <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input type="text" placeholder="Type to search..">
+            <div class="autocom-box">
+              <!-- here list are inserted from javascript -->
+            </div>
+            <div class="icon"><i class="fas fa-search"></i></div>
+          </div>
+        </div>
+        <p><i class="fa-solid fa-bars" id="menu"></i></p>
+      </div> 
+      <div class="submenu">
+          <div class="menu"> 
+
+          <a href="vault.html"><i class="fa-solid fa-gear" id="set-logo"></i></a>
+          <a href="vault.html"><h2>SETTINGS</h2></a>
+          <hr class="hro1" width="300px"/>
+          <a href="home.html"class="a1">TODAY</a>
+          <a href="hour.html"class="a2">HOUR</a>
+          <a href="daily.html"class="a3">DAILY</a>
+          <a href="monthly.html"class="a4">MONTHLY</a>
+          <a href="air.html"class="a5">AIR QUALITY</a>
+         </div>
+      </div>
+      <div class="navbar">
+        <ul>
+        <div class="move-bar"></div>  
+        <li class="l1"><a href="home.html" class="page1">Today</a></li>
+        <li class="l2"><a href="hour.html" class="page2">Hourly</a></li>
+        <li class="l3"><a href="daily.html" class="page3">Daily</a></li>
+        <li class="l4"><a href="monthly.html" class="page4">Monthly</a></li>
+        <li class="l5"><a href="air.html" class="page5">Air Quality</a></li>
+      </div>
+      {% for i in man1 %}
+      <p id="period"></p>
+      <div class="day1">
+        <p id="day1">SUN</p>
+        <p id="dat1">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Some clouds,then sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man2 %}
+      <div class="day2">
+        <p id="day2">MON</p>
+        <p id="dat2">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Increasing clouds</p>
+        <i class="fa-solid fa-droplet" id="id1"> 1%</i>
+      </div>
+      {% endfor %}
+      {% for i in man3 %}
+      <div class="day3">
+        <p id="day3">TUE</p>
+        <p id="dat3">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Hazy sun with low humidity</p>
+        <i class="fa-solid fa-droplet" id="id1"> 0%</i>
+      </div>
+      {% endfor %}
+      {% for i in man4 %}
+      <div class="day4">
+        <p id="day4">WED</p>
+        <p id="dat4">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Hazy sun</p>
+        <i class="fa-solid fa-droplet" id="id1"> 1%</i>
+      </div>
+      {% endfor %}
+      {% for i in man5 %}
+      <div class="day5">
+        <p id="day5">THU</p>
+        <p id="dat5">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Hazy sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man6 %}
+      <div class="day6">
+        <p id="day6">FRI</p>
+        <p id="dat6">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Hazy sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 1%</i>
+      </div>
+      {% endfor %}
+      {% for i in man7 %}
+      <div class="day7">
+        <p id="day7">SAT</p>
+        <p id="dat7">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man8 %}
+      <div class="day8">
+        <p id="day8">SUN</p>
+        <p id="dat8">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man9 %}
+      <div class="day9">
+        <p id="day9">MON</p>
+        <p id="dat9">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man10 %}
+      <div class="day10">
+        <p id="day10">TUE</p>
+        <p id="dat10">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man11 %}
+      <div class="day11">
+        <p id="day11">WED</p>
+        <p id="dat11">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man12 %}
+      <div class="day12">
+        <p id="day12">THU</p>
+        <p id="dat12">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man13 %}
+      <div class="day13">
+        <p id="day13">FRI</p>
+        <p id="dat13">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+      {% for i in man14 %}
+      <div class="day14">
+        <p id="day14">SAT</p>
+        <p id="dat14">{{i.month}}/{{i.date}}</p>
+        <img src="{{i.image.url}}">
+        <p id="high">{{i.high}}<sup>o</sup></p>
+        <p id="low">/{{i.low}}<sup>o</sup></p>
+        <p id="cotation">Nice with plenty of sunshine</p>
+        <i class="fa-solid fa-droplet" id="id1"> 2%</i>
+      </div>
+      {% endfor %}
+    </body>
+</html>  

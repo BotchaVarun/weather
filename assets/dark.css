@@ -1,0 +1,447 @@
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*
+{
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+}
+body{
+
+    background-color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+.bar{
+    max-width: 100%;
+    height: 10%;
+    box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+    position: relative;
+    background-color:#252525;
+}
+.bar h2{
+    color:white;
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 1%;
+    
+}
+.status
+{
+position: absolute;
+margin-left: 35%;
+margin-top: 25px;
+color:#fff;
+}
+.degree
+{
+    position: absolute;
+    margin-left:51%;
+    margin-top: 21px;
+    color:#fff;
+
+}
+/*search bar*/
+h1{
+	float:left;
+	margin-top:10px;
+}
+.box{
+
+	max-width: 500px;
+
+	max-height: 50px;
+
+	background-color: white;
+
+	border-radius: 5px;
+    position: absolute;
+	display: flex;
+
+	align-items: center;
+    margin-top: 1%;
+	padding: 20px;
+    margin-left:67%;
+    margin-bottom:15px;
+    box-shadow:  5px 5px 10px rgba(0,0,0,0.2);
+
+}
+
+.box > i {
+
+	font-size: 20px;
+
+	color: #777;
+
+}
+
+
+.box > input{
+
+	flex: 1;
+
+	height: 40px;
+
+	border: none;
+
+	outline: none;
+
+	font-size: 18px;
+
+	padding-left: 30px;
+
+
+}
+img
+{
+    position: absolute;
+    width: 35px;
+    margin-left:17%;
+    margin-top:1%;
+}
+/* Menu */
+#menu
+{
+    color:white;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 97%;
+    margin-top: 26px;
+}
+/* settings */
+.submenu
+{
+    position: absolute;
+    top:10%;
+    width:20%;
+    right:0;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    height: 0%;
+    overflow: hidden;
+    background-color:#fff;
+    border-radius: 2px;
+    transition: height 0.5s;
+    cursor: pointer;
+}
+.menu
+{
+    right:0;
+    padding: 20px;
+    margin: 0px;
+  
+}
+.submenu.open-menu
+{
+    height: 40%;
+    transition: height 0.5s;
+}
+.submenu.close-menu
+{
+    min-height: 0%;
+
+}
+.menu h2
+{
+    position: absolute;
+    margin-top:23px;
+    margin-left: 33%;
+}
+#set-logo{
+position: absolute;
+margin-top:25px;
+font-size: 30px;
+margin-left:18%;
+}
+#close-logo
+{
+    position: absolute;
+    font-size:25px;
+    padding-left: 15px;
+    left:87%;
+    padding-top: 10px;
+}
+.submenu .hro1
+{
+    height: 25px;
+    position:absolute;
+    color:grey;
+    padding-top: 3px;
+    margin-left:44px;
+    border-radius: 1px;
+    margin-top:40px;
+    width:250px;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+a{
+    text-decoration: none;
+    color:black;
+    
+}
+.submenu a{
+    text-decoration: none;
+    color:lightslategray;
+    
+}
+.submenu .a1
+{
+    margin-top:30%;
+    margin-left: 44px;
+    font-size:20px; 
+    position: absolute;
+
+}
+.submenu .a1:hover{
+    margin-left:70px;
+    color:black;
+    margin-top:29%;
+}
+.submenu .a2:hover{
+    margin-left:70px;
+    color:black;
+    margin-top:39%;
+
+}
+.submenu .a3:hover{
+    margin-left:70px;
+    color:black;
+    margin-top:49%;
+}
+.submenu .a4:hover{
+    margin-left:70px;
+    color:black;
+    margin-top:59%;
+
+}
+.submenu .a5:hover{
+    margin-left:70px;
+    color:black;
+    margin-top:69%;
+
+}
+
+.submenu .a2
+{
+    margin-top:40%;
+    margin-left: 44px;
+    font-size:20px;  
+    position: absolute;
+}
+
+.submenu .a3
+{
+    margin-top:50%;
+    margin-left: 44px;
+    font-size:20px; 
+    position: absolute; 
+}
+
+
+.submenu .a4
+{
+    margin-top:60%;
+    margin-left: 44px;
+    font-size:20px;  
+    position: absolute;
+}
+.submenu .a5
+{
+    margin-top:70%;
+    margin-left: 44px;
+    font-size:20px;  
+    position: absolute;
+}
+/* nav bar */
+.navbar
+{
+    background-color: #fff;
+    overflow: hidden;
+    max-width: 45%;
+    height: 5%;
+    left:27%;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+
+}
+li
+{
+    list-style: none;
+    position: absolute;
+    top:20%;
+}
+.l1
+{
+  margin-left: 2%;  
+}
+.l2
+{
+  margin-left: 20%;  
+}
+.l3
+{
+  margin-left: 40%;  
+}
+.l4
+{
+  margin-left: 60%;  
+}
+.l5
+{
+  margin-left: 80%;  
+}
+.move-bar
+{ 
+    position: absolute;
+    width:100px;
+    margin-top:42px;
+    background-color:orangered;
+    height: 2px;
+    border-radius: 2px;
+}
+
+
+/*.container
+{
+    max-width:1760px;
+    max-height:70px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    background-color: #1f2327;
+    padding-block: 15px;
+}
+.navbar a
+{
+    text-decoration: none;
+    color: #fff;
+    
+    display: flex;
+}
+
+.box{
+
+	max-width: 500px;
+
+	max-height: 40px;
+
+	background-color: white;
+
+	border-radius: 5px;
+    
+	display: flex;
+    margin-top: 0%;
+	align-items: center;
+    margin-top: 0;
+	padding: 20px;
+
+    
+
+}
+.box > .i {
+
+	font-size: 20px;
+
+	color: #777;
+
+}
+
+
+.box > input{
+
+	flex: 1;
+
+	height: 40px;
+
+	border: none;
+
+	outline: none;
+
+	font-size: 18px;
+
+	padding-left: 30px;
+
+
+}
+.location
+{
+	position: absolute;
+	left: 30%;
+	background-color: black;
+	height:50px;
+	width:500px;
+	top:1%;
+}
+.container li{
+    list-style: none;
+    clear: right;
+}
+.toggle:checked ~ #menu {
+    max-height: 100%;
+}
+
+/* General styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #090909;
+    padding: 50px;
+}
+
+.container {
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 15px;
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f2327;
+    padding-block: 15px;
+}
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+.logo {
+    margin-right: 30px;
+}
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+#toggler,
+.navbar label {
+    display: none;
+}*/
+@media screen and (max-width: 600px) {
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggler:checked ~ .menu {
+        max-height: 100%;
+    }
+}

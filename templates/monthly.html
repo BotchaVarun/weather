@@ -1,0 +1,586 @@
+{% load static %}
+<html>
+    <head>
+        <title>Weather Report</title>
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+        <meta charset="utf-8">
+        <!-- Google Font Link for Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'monthly.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'dark.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <script onload="close()" src="{% static 'monthly.js'%}"defer></script>
+        <script src="{% static 'navbar.js'%}"defer></script>
+        <script src="{% static 'suggestions.js'%}"defer></script>
+        <script src="{% static 'script.js'%}"defer></script>
+        <script onload="findmystate()" src="{% static 'main.js'%}"defer></script>
+    </head>
+    <style>
+      .move-bar
+      {
+        margin-left:59%;
+        width:85px;
+      }
+    </style>
+    <body>
+      <div class="bar">
+        <img src="{% static 'images/logo.png'%}"/>
+        <h2>Weather Report</h2>
+        <P class="status"></P>
+        <p class="degree">26<sup>o</sup>c</p>
+        <div class="wrapper">
+          <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input type="text" placeholder="Type to search..">
+            <div class="autocom-box">
+              <!-- here list are inserted from javascript -->
+            </div>
+            <div class="icon"><i class="fas fa-search"></i></div>
+          </div>
+        </div>
+        <p><i class="fa-solid fa-bars" id="menu"></i></p>
+      </div> 
+      <div class="submenu">
+          <div class="menu"> 
+
+          <a href="settings.html"><i class="fa-solid fa-gear" id="set-logo"></i></a>
+          <a href="settings.html"><h2>SETTINGS</h2></a>
+          <hr class="hro1" width="300px"/>
+          <a href="home.html"class="a1">TODAY</a>
+          <a href="hour.html"class="a2">HOUR</a>
+          <a href="daily.html"class="a3">DAILY</a>
+          <a href="monthly.html"class="a4">MONTHLY</a>
+          <a href="air.html"class="a5">AIR QUALITY</a>
+         </div>
+      </div>
+      <div class="navbar">
+        <ul>
+        <div class="move-bar"></div>  
+        <li class="l1"><a href="home.html" class="page1">Today</a></li>
+        <li class="l2"><a href="hour.html" class="page2">Hourly</a></li>
+        <li class="l3"><a href="daily.html" class="page3">Daily</a></li>
+        <li class="l4"><a href="monthly.html" class="page4">Monthly</a></li>
+        <li class="l5"><a href="air.html" class="page5">Air Quality</a></li>
+      </div>
+      <div class="wrapper1">
+        <header>
+          <p class="current-date"></p>
+          <div class="icons">
+            <span id="prev" class="material-symbols-rounded">chevron_left</span>
+            <span id="next" class="material-symbols-rounded">chevron_right</span>
+          </div>
+        </header>
+        <div class="calendar">
+          <ul class="weeks">
+            <li class="sunday">Sun</li>
+            <li class="monday">Mon</li>
+            <li class="tuesday">Tue</li>
+            <li class="wednesday">Wed</li>
+            <li class="thursday">Thu</li>
+            <li class="friday">Fri</li>
+            <li class="saturday">Sat</li>
+          </ul>
+          <ul class="days"></ul>
+        </div>
+      </div>
+      {% for i in day1 %}
+      <div class="goodmorning">
+      <div class="mrng">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date">12/18</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value1">{{i.uv}} Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in day2 %}
+      <div class="mrng1">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date1">12/19</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+  
+        <p id="value1">{{i.uv}} Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in day3 %}
+      <div class="mrng2">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date2">12/19</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+  
+        <p id="value1">{{i.uv}} Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in day4 %}
+      <div class="mrng3">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date3">12/19</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value1">{{i.uv}}Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in day5 %}
+      <div class="mrng4">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date4">12/19</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+  
+        <p id="value1">{{i.uv}} Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in day6 %}
+      <div class="mrng5">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date5">12/19</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+  
+        <p id="value1">{{i.uv}} Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in day7 %}
+      <div class="mrng6">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date6">12/19</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+  
+        <p id="value1">{{i.uv}} Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in day8 %}
+      <div class="mrng7">
+        <h3>DAY</h3>
+        <img src="{% static 'images/trans-cloud-sun.png' %}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Hi</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Hot</p>
+        <p id="tm1">RealFeel Shade <sup>TM</sup> 31<sup>o</sup></p>
+        <p id="tmcomment1">Very Warm</p>
+        <p id="date7">12/19</p>
+        <p id="dialouge1">Less humid; sun and areas of high clouds in the morning, then mostly cloudy in the afternoon</p>
+        <p id="p1">Max UV Index</p>
+        <hr id="hr1"/>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+  
+        <p id="value1">{{i.uv}} Moderate</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">1%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      </div>
+      {% endfor %}
+      {% for i in night1 %}
+      <div class="goodnight">
+      <div class="night">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate">12/18</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">N {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in night2 %}
+      <div class="night1">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate1">12/19</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">NE {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in night3 %}
+      <div class="night2">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate2">12/19</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">NE {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in night4 %}
+      <div class="night3">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate3">12/19</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">NE {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in night5 %}
+      <div class="night4">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span>{{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate4">12/19</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">NE {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in night6 %}
+      <div class="night5">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate5">12/19</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">NE {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in night7 %}
+      <div class="night6">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate6">12/19</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">NE {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      {% for i in night8 %}
+      <div class="night7">
+        <h3>NIGHT</h3>
+        <img src="{% static 'images/halfmoon.png'%}">
+        <p id="degree1">{{i.degree}}<sup>o</sup></p>
+        <p id="high">Lo</p>
+        <p id="real1">RealFeel <span class="trademark">&reg;</span> {{i.degree}}<sup>o</sup></p>
+        <p id="comment1">Pleasant</p>
+        <p id="ndate7">12/19</p>
+        <p id="dialouge1">Clear to partly cloudy and warm</p>
+        <p id="p2">Wind</p>
+        <hr id="hr2" />
+        <p id="p3">Wind Gusts</p>
+        <hr id="hr3"/>
+        <p id="p4">Probability of Precipitation</p>
+        <p id="value2">NE {{i.wind}} km/h</p>
+        <p id="value3">{{i.windgusts}} km/h</p>
+        <p id="value4">0%</p>
+        <p id="p5">Probability of Thunderstorms</p>
+        <hr id="hr5"/>
+        <p id="p6">Precipitation</p>
+        <hr id="hr6"/>
+        <p id="p7">Cloud Cover</p>
+        <p id="value5">0%</p>
+        <p id="value6">0.0 mm</p>
+        <p id="value7">{{i.cloudcover}}%</p>
+      </div>
+      {% endfor %}
+      </div>
+    </body>
+</html>  

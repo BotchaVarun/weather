@@ -1,0 +1,65 @@
+
+i{
+    font-size: 20px;
+}
+#settings 
+{
+    float:right;
+
+    position:relative;
+    left:60%;
+}
+#settings:hover{
+    transform: rotate(20deg);
+    
+}
+.submenu
+{
+   position: absolute;
+   top:17%;
+   right:0;
+   width:320px;
+   right:5px;
+   box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+   max-height: 0%;
+   overflow: hidden;
+   transition: max-height 0.5s;
+   
+
+}
+.submenu.open-menu
+{
+    max-height: 400%;
+}
+.sub
+{
+    right:5px;
+    background:#9895EF;
+    padding: 20px;
+    margin: 0px;
+}
+select
+{
+    width:200px;
+    height:25px;
+
+}
+option
+{
+
+    position:fixed;
+    top:32%;
+    right:5%
+
+}
+#lan
+{
+    position: relative;
+    top:3%;
+    right:3%;
+    list-style: none;
+}
+#loc
+{
+    top:0%;
+}

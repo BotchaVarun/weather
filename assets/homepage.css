@@ -1,0 +1,298 @@
+.current
+{
+    background-color:white;
+    max-width:45%;
+    height:30%;
+    top:15%;
+    left:27%;
+    position: relative;
+    padding:5px;
+ 
+    border-radius: 5px;
+    box-shadow: 1px 0 10px 10px rgba(0,0,0,0.2);
+}
+#time
+{
+    left:5px;
+    position:absolute;
+    top:40px;
+    z-index: 1;
+
+}
+#p1
+{
+    position:absolute;
+    z-index: 1;
+}
+#img1
+{
+    width:220px;
+    margin-left:5%;
+    top:10px;
+    
+    position: absolute;
+
+}
+#p3
+{
+    left:35%;
+    top:23%;
+    position:absolute;
+    font-size: 90px;
+}
+#p4
+{
+    left:50%;
+    top:53%;
+    color:gray;
+    font-size:30px;
+    position: absolute;
+}
+#p5
+{
+  position: absolute;
+  top:80%;
+  left:20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+#p6
+{
+    position:absolute;
+    left:36%;
+    top:70%;
+    font-size: 20px;
+}
+#p7
+{
+    position:absolute;
+    top:10%;
+    left:58%;
+}
+#p8
+{
+    position:absolute;
+    top:28%;
+    left:58%;
+}
+#p9
+{
+    position:absolute;
+    top:46%;
+    left:58%;
+}
+#p10
+{
+    position:absolute;
+    top:64%;
+    left:58%;
+}
+#hr1
+{
+    position: absolute;
+    top:60px;
+    left:58%;
+    border-bottom: 1px solid grey;
+}
+#hr2
+{
+    position: absolute;
+    top:105px;
+    left:58%;
+    border-bottom: 1px solid grey;
+}
+#hr3
+{
+    position: absolute;
+    top:160px;
+    left:58%;
+    border-bottom: 1px solid grey;
+}
+#info1
+{
+    position: absolute;
+    top:10%;
+    left:90%;
+}
+#info2
+{
+    position: absolute;
+    top:27%;
+    left:82%;
+    color: blueviolet;
+}
+#info3
+{
+    position: absolute;
+    top:47%;
+    left:84%;
+}
+#info4
+{
+    position: absolute;
+    top:65%;
+    left:88%;
+}
+#more
+{
+    top: 83%;
+    left:80%;
+    position:absolute;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+#arrow
+{
+    position: absolute;
+    top:84%;
+    left:95%;
+}
+#arrow:hover
+{
+    color:red;
+}
+#airindex
+{
+    position: relative;
+    width:45%;
+    height:50%;
+    top:30%;
+    border-radius: 5px;
+    left:27%;
+    box-shadow: 1px 0 10px 10px rgba(0,0,0,0.2);
+    background-color: white;
+}
+/*circular*/
+
+.circular-progress{
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    top:40%;
+    left:2%;
+    box-shadow: 1px 0 10px 10px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.circular-progress::before{
+    content: "";
+    top:8%;
+    position: absolute;
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
+    background-color: #fff;
+ 
+}
+.progress-value{
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+ 
+}
+.text{
+    font-size: 30px;
+    font-weight: 500;
+    color: #606060;
+}
+#airp1
+{
+    position:absolute;
+    font-size:x-large;
+    color: #606060;
+    padding-left:10px;
+    top:10%;
+    padding-top: 10px;
+}
+#airp2
+{
+    position: absolute;
+    font-size: x-large;
+    color: #606060;
+    padding-left: 10px;
+    padding-top: 5px;
+    top:20%;     
+}
+#airhead{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:25px;
+    padding-left:10px ;
+
+}
+#airhr
+{
+    top:10px;
+}
+#airh2
+{
+    size: 80%;
+    color:purple; 
+    height: 50px;
+    margin:20px 0;
+    width:100px;
+    max-width: 50px;
+}
+#line
+{
+    width:50px;
+    position:absolute;
+    height:5px;
+    left:40%;
+    top:25%;
+    border-radius: 2px;
+    background-color: #7d2ae8;
+}
+#airp3
+{
+
+    position:absolute;
+    left:40%;
+    top:30%;
+    font-size: 25px;
+    border-radius: 2px;
+    color:black;
+}
+#airp4
+{
+    display:block;
+    position:absolute;
+    top:45%;
+    left:45%;
+    font-size:20px;
+}
+#button
+{
+    position: absolute;
+    width:170px;
+    top:85%;
+    left:60%;
+    height: 10%;
+    background-color:#606060;
+    border-radius: 5px;
+    cursor:pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+#airlink
+{
+    position: absolute;
+   color:white;
+    left:20%;
+    top:19%;
+}
+#arrow2
+{
+    position: absolute;
+    left:110%;
+    top:20%;
+    color:white;
+}
+#button:hover
+{
+   background-color:grey;
+}

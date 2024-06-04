@@ -1,0 +1,100 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+    <head>
+      <title>Weather Report</title>
+      <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
+      
+      <link rel="stylesheet" type="text/css" href="{% static 'dark.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}">  
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+      <script src="{% static 'navbar.js' %}"defer></script>
+      <script src="{% static 'dark.js' %}"defer></script> 
+      <script src="{% static 'suggestions.js' %}"defer></script>
+      <script src="{% static 'script.js' %}"defer></script>
+      <script onload="findmystate()" src="{% static 'main.js' %}"defer></script>
+    </head> 
+    {% for i in var %}
+          <body>
+            <div class="bar">
+              <img src="{% static 'images/logo.png'%}"/>
+              <h2>Weather Report</h2>
+              <P class="status"></P>
+              <p class="degree">{{i.degree}}<sup>o</sup>c</p>
+              <div class="wrapper">
+                <div class="search-input">
+                  <form action="main">
+                  <input type="text"  name="city" placeholder="Type to search..">
+                  </form>
+                  <div class="autocom-box">
+                    <!-- here list are inserted from javascript -->
+                  </div>
+                  <div class="icon"><i class="fas fa-search"></i></div>
+                </div>
+              </div>
+              <p><i class="fa-solid fa-bars" id="menu"></i></p>
+            </div> 
+            <div class="submenu">
+                <div class="menu"> 
+                <a href="settings.html"><i class="fa-solid fa-gear" id="set-logo"></i></a>
+                <a href="settings.html"><h2>SETTINGS</h2></a>
+                <hr class="hro1" width="300px"/>
+                <a href="home.html"class="a1">TODAY</a>
+                <a href="hour.html"class="a2">HOUR</a>
+                <a href="daily.html"class="a3">DAILY</a>
+                <a href="monthly.html"class="a4">MONTHLY</a>
+                <a href="air.html"class="a5">AIR QUALITY</a>
+               </div>
+            </div>
+            <div class="navbar">
+              <ul>
+              <div class="move-bar"></div>  
+              <li class="l1"><a href="home.html" class="page1">Today</a></li>
+              <li class="l2"><a href="hour.html" class="page2">Hourly</a></li>
+              <li class="l3"><a href="daily.html" class="page3">Daily</a></li>
+              <li class="l4"><a href="monthly.html" class="page4">Monthly</a></li>
+              <li class="l5"><a href="air.html" class="page5">Air Quality</a></li>
+            </div>
+
+            <div class="current">
+              <p id="p1">CURRENT WEATHER</p>
+              <p id="time"></p>
+              <img src="{{i.img.url}}" id="img1">
+              <p id="p3">{{i.degree}}<sup>o</sup></p>
+              <p id="p4">C</p>
+              <p id="p5">{{i.desc}}</p>
+              <p id="p6">RealFeel&reg;33<sup>o</sup></p>
+              <p id="p7">RealFeelShade<sup>TM</sup>
+               <hr id="hr1" width="280px">
+              <p id="p8">AirQuality</p>
+              <hr id="hr2" width="280px">
+              <p id="p9">Wind</p>
+              <hr id="hr3" width="280px">
+              <p id="p10">Wind Gusts</p>  
+              <p id="info1">33<sup>o</sup></p>
+              <p id="info2">Very Unhealthy</p>
+              <p id="info3">NW 22 Km/h</p>
+              <p id="info4">34 Km/h</p>
+              <p id="more"><a href="hour.html" target="_self"><em>MOREDETAILS</em></a></p>
+              <p id="arrow"><a href="hour.html" target="_self"><i class="fa-sharp fa-solid fa-arrow-right"></i></a></p>
+            </div> 
+            <div id="airindex">
+              <p id="airhead">Current Air Index</h3>
+              <hr height="30px" id="airhr"/>  
+              <p id="airp1">Today</p>
+              <p id="airp2"></p>
+              <div class="container">
+                <div class="circular-progress">
+                    <span class="progress-value">{{i.aqi}}</span>
+                </div>
+              <div id="line"></div>
+              <p id="airp3">Very Unhealthy</p>
+              <p id="airp4">Health effects will be immediately felt by sensitive groups and should avoid outdoor activity. Healthy individuals are likely to experience difficulty breathing and throat irritation; consider staying indoors and rescheduling outdoor activities.</p>
+              <div id="button"><a href="air.html"><p id="airlink">More Details<i class="fa-sharp fa-solid fa-arrow-right" id="arrow2"></i></p></a></div>
+            </div>
+            </div>
+            {% endfor %}
+          </body>
+
+      </html>

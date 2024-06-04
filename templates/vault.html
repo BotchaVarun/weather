@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>vault</title>
+        <link rel="stylesheet" type="text/css" href="vault.css">
+        <script src="vault.js"defer></script>
+    </head>
+    <body>
+        <div class="signin">
+            <div class="box1" id="box1">
+            <form id="form">
+            <h2  style="cursor:pointer">Sign in</h2>
+            <p class="email">enter email</p>
+                <div class="input-box">
+                    <input type="text" autocomplete="off" id="email" placeholder="Enter Email" onkeydown="validation()"/>
+                </div>     
+                <span id="text"></span>   
+            <p class="password">enter password</p>
+                <div class="pass-box">
+                    <input type="password" placeholder="Enter Password"/>
+                </div>    
+            <button class="sign-button" >Login</button>    
+            </form>
+            <p class="dialogue">new user? <a  href="#"onclick="pass()">Create account</a></p>  
+            </div>
+                <div class="box2" id="box2">
+                    <form id="form">
+                       <h2 class="create">Create Account</h2>
+                       <p class="email2">Enter Email</p>
+                           <div class="email-box">
+                               <input type="text" id="email"placeholder="Enter Email" onkeydown="validation()"/>
+                           </div>        
+                           <span id="text"></span>
+                       <button class="create-button">Next</button>    
+                    </form>
+                   </div> 
+        </div>    
+    </body>
+</html>                
